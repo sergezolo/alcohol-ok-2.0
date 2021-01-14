@@ -1,8 +1,13 @@
 import './App.css';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { getCocktails } from './actions/cocktails';
 
 class App extends Component {
+
+  componentDidMount(){
+    this.props.getCocktails()
+  }
 
   render(){
 
@@ -29,4 +34,4 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps)(App);
+export default connect(mapStateToProps, { getCocktails })(App);
