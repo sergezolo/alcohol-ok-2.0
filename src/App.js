@@ -2,6 +2,8 @@ import './App.css';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { getCocktails } from './actions/cocktails';
+import Header from './components/Header'
+
 
 class App extends Component {
 
@@ -10,15 +12,21 @@ class App extends Component {
   }
 
   render(){
-
     const cocktails = this.props.cocktails.map((cocktail, index) => {
       return <li key={index}>{cocktail.name}</li>;
     })
 
     return (
       <div className="App">
+        <Header></Header>
         <header className="App-header">
-          <ul>{this.props.loading ? <h3>Loading...</h3> : cocktails}</ul>
+          <React.Fragment>
+            
+            <ul>{this.props.loading ? <h3>Loading...</h3> : cocktails}</ul>
+            
+          </React.Fragment>
+          
+          
         </header>
       </div>
     );
