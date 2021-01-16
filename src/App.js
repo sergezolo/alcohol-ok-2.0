@@ -2,7 +2,8 @@ import './App.css';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { getCocktails } from './actions/cocktails';
-import Header from './components/Header'
+import Header from './components/Header';
+import Footer from './components/Footer';
 
 
 class App extends Component {
@@ -18,16 +19,17 @@ class App extends Component {
 
     return (
       <div className="App">
-        <Header></Header>
+        <Header/>
         <header className="App-header">
           <React.Fragment>
             
             <ul>{this.props.loading ? <h3>Loading...</h3> : cocktails}</ul>
-            
+            <br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br>
           </React.Fragment>
           
           
         </header>
+        <Footer/>
       </div>
     );
   }

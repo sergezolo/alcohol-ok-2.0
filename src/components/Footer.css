@@ -1,0 +1,84 @@
+.Footer {
+    position: absolute;
+    bottom: 0;
+    background-color: #1b262c;
+    width: 100%;
+    min-height: 40px;
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+}
+
+.Footer .leftSide {
+    flex: 25%;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+.Footer .leftSide h2 {
+    text-decoration: none;
+    color: #ec8b56;
+    font-size: 40px;
+    font-weight: bold;
+    margin: 30px;
+    align-items: center;
+}
+
+.Footer .leftSide a {
+    text-decoration: none;
+    color: #ec8b56;
+    font-size: 16px;
+    margin-left: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+}
+
+.Footer .leftSide a:hover {
+    text-decoration: none;
+}
+
+.Footer .rightSide p {
+    text-decoration: none;
+    color: #ec8b56;
+    font-size: 14px;
+    font-weight: bold;
+    margin: 30px;
+    display: flex;
+    align-items: center;
+}
+
+.Footer .centralSide {
+    flex: 15%;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+.Footer .rightSide {
+    flex: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 25px;
+}
+
+.Footer .centralSide .links a {
+    text-decoration: none;
+    color: #ec8b56;
+    font-size: 16px;
+    margin-left: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+}
+
+.Footer .centralSide .links a:hover {
+    text-decoration: underline;
+}
+
+@media only screen and (max-width: 1000px) {
+    .Footer .rightSide {
+        display: none;
+    }
+}

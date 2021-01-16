@@ -1,4 +1,4 @@
-export default (state = {cocktails: [], loading: false}, action) => {
+export default function cocktailReducer(state = {cocktails: [], loading: false}, action) {
     switch (action.type) {
         case("LOADING_COCKTAILS"):
             return{...state, loading: true}
