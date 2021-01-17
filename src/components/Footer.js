@@ -1,17 +1,18 @@
 import React from 'react';
 import './Footer.css';
+import { Link } from 'react-router-dom';
 
 function Footer() {
     return (
         <div className="Footer">
             <div className="leftSide">
-                <a href='/home'><h2>alcoholOK </h2></a>
+                <Link to='/'><h2>alcoholOK </h2></Link>
             </div>
             <div className="centralSide">
                 <div className="links">
-                    <a href='/home'>HOME</a>
-                    <a href='/create'>ADD A COCKTAIL</a>
-                    <a href='/favorites'>FAVORITES</a>
+                    <Link to='/'>HOME</Link>
+                    <Link to='/create'>ADD A COCKTAIL</Link>
+                    <Link to='/favorites'>FAVORITES</Link>
                 </div>
             </div>
             <div className="rightSide">
