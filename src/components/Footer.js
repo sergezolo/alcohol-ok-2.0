@@ -2,7 +2,7 @@ import React from 'react';
 import './Footer.css';
 import { Link } from 'react-router-dom';
 
-function Footer() {
+const Footer = () => {
     return (
         <div className="Footer">
             <div className="leftSide">
