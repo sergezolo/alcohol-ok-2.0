@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Route, Switch } from 'react-router-dom';
 import { getCocktails } from '../actions/cocktails';
+import Cocktails from '../components/Cocktails';
 
 
 class CocktailsContainer extends Component {
@@ -18,9 +19,14 @@ class CocktailsContainer extends Component {
 
         return (
             <div className="cocktails-container">
-                <Switch>
                 <ul>{this.props.loading ? <h3>Loading...</h3> : cocktails}</ul>
-                    <Route />
+                <Switch>
+                    <Cocktails></Cocktails>
+                    <Route path='/cocktails'/>
+                    <Route path='/cocktails/:id'/>
+                    <Route path='/cocktails/:id/edit'/>
+                
+
                 </Switch>
             </div>
         )
