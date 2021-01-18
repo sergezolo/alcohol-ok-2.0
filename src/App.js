@@ -4,6 +4,7 @@ import Header from './components/Header';
 import CocktailsContainer from './containers/CocktailsContainer';
 import CocktailForm from './components/CocktailForm';
 import Favorite from './components/Favorite';
+import Error from './pages/Error'
 import Footer from './components/Footer';
 import './App.css';
 
