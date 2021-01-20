@@ -1,12 +1,13 @@
 import React from 'react';
-import Cocktail from './Cocktail';
+import CocktailCard from './Cocktail';
 
-const Cocktails = () => {
+const Cocktails = (props) => {
     return (
         <div>
-            <Cocktail></Cocktail>
+            {console.log(props)}
+            <CocktailCard></CocktailCard>
         </div>
     )
 }
 
-export default Cocktails
+export default Cocktails;

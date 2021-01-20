@@ -1,6 +1,6 @@
 .cocktail {
-    width: 250px;
-    height: 300px;
+    width: 280px;
+    height: 350px;
     display: flex;
      overflow: hidden;
     flex-direction: column;
@@ -13,9 +13,9 @@
     margin-top: -20px;
 }
 
-.cocktail-name :hover {
+/* .cocktail-name :hover {
     height: 100px;
-}
+} */
 
 img :hover{
     transform: translatey(-10px) translatex(-5px) scale(1.05)

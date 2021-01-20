@@ -3,9 +3,9 @@ import React from 'react'
 const InstructionForm = ({ instructions, handleChange }) => {
     return (
         <div>
-            <input type="text" id="instructionId"></input> 
+            <input className="input-2" type="text" id="instructionId"></input> 
         </div>
     )
 }
 
-export default InstructionForm
+export default InstructionForm;

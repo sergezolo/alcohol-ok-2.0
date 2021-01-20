@@ -1,7 +1,7 @@
 import React from 'react';
 import './Cocktail.css';
 
-const Cocktail = () => {
+const CocktailCard = () => {
     return (
         <div className="cocktail">
             <div className="cocktail-image">
@@ -14,4 +14,4 @@ const Cocktail = () => {
     )
 }
 
-export default Cocktail;
+export default CocktailCard;

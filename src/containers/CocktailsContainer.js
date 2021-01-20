@@ -17,12 +17,14 @@ class CocktailsContainer extends Component {
             return <li key={index}>{cocktail.name}</li>;
         })
 
+        const cocktailsList = this.props
+
         return (
             <div className="cocktails-container">
                 <ul>{this.props.loading ? <h3>Loading...</h3> : cocktails}</ul>
                 <Switch>
-                    <Cocktails></Cocktails>
-                    <Route path='/cocktails'/>
+                    <Cocktails cocktailsList={cocktailsList} ></Cocktails>
+                    <Route path='/' render={<Cocktails cocktailsList={cocktailsList}/>}/>
                     <Route path='/cocktails/:id'/>
                     <Route path='/cocktails/:id/edit'/>
                 
