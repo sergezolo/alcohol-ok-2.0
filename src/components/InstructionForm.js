@@ -5,7 +5,7 @@ const InstructionForm = ({ instructions, handleChange }) => {
         instructions.map((value, index) => {
             return (
                 <div key={index}>
-                    <input className="input" type="text" name={`instruction-${index}`} placeholder="Instruction" value={value} onChange={(event) => handleChange(index, event.target.value)}/> 
+                    <input className="input" type="text" placeholder="Instruction" value={value} onChange={(event) => handleChange(index, event.target.value)}/> 
                 </div>
             )
         })

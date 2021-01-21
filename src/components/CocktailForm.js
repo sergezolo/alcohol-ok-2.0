@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import IngredientForm from './IngredientForm';
 import InstructionForm from './InstructionForm';
 import AddCircleIcon from '@material-ui/icons/AddCircle';
+import { connect } from 'react-redux';
+import { createCocktail} from '../actions/cocktails';
 
 export class CocktailForm extends Component {
 
@@ -64,10 +66,6 @@ export class CocktailForm extends Component {
         })
     }
 
-    handleSubmit = event => {
-
-    }
-
     addIngredient = event => {
         event.preventDefault();
         this.setState((prevState) => ({
@@ -82,12 +80,35 @@ export class CocktailForm extends Component {
         }))
     }
 
+    handleSubmit = event => {
+        event.preventDefault();
+        const cocktail = {
+            name: this.state.name,
+            description: this.state.description,
+            imgUrl: this.state.imgUrl,
+            instructions: this.state.instructions,
+            ingredients: this.state.ingredients,
+        }
+        this.props.createCocktail(cocktail)
+        this.setState({
+            name: "",
+            description: "",
+            imgUrl: "",
+            instructions: [""],
+            ingredients: [
+                {
+                    name: "",
+                    quantity: "",
+                }
+            ]
+        })
+    }
+
     render() {
         console.log(this.state)
-        // let { name, img_url, description, instructions, ingredients } = this.state
         let { instructions, ingredients } = this.state
         return (
-            <div className="grid-container">
+            <form className="grid-container" onSubmit={this.handleSubmit}>
                 <div className="item1">
                     <h3>Add a new cocktail:</h3>
                     <input type="text" name="name" id="name" placeholder="Name" onChange={this.handleChange}/><br/><br/>
@@ -108,9 +129,9 @@ export class CocktailForm extends Component {
                     <input className="input-4" type="text" name="description" id="description" onChange={this.handleChange}/><br/><br/>
                     <input className="buttonPr" type="submit"/><br/><br/>
                 </div>
-            </div>
+            </form>
         )
     }
 }
 
-export default CocktailForm
+export default connect(null, { createCocktail })( CocktailForm);

@@ -8,6 +8,11 @@ body {
     margin: 0 auto;
     padding: 0;
 }
+
+.cocktails-container {
+    display: flex;
+}
+
 .buttonPr {
     color: #ec8b56;
     font-size: 20px;
@@ -48,7 +53,7 @@ input {
 }
 .input-4 {
     width: 720px;
-    height: 200px;
+    height: 100px;
     border: none;
     font-size: 16px;
     color: black;

@@ -2,11 +2,13 @@
     width: 280px;
     height: 350px;
     display: flex;
-     overflow: hidden;
+    overflow: hidden;
     flex-direction: column;
     position: relative;
     margin: 1rem;
     box-shadow: 0.1rem 0.1rem 0.1rem rgb(36, 36, 36);
+    justify-content: left;
+    align-items: center;
 }
 
 .cocktail-image :hover {
