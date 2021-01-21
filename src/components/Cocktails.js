@@ -1,11 +1,13 @@
 import React from 'react';
-import CocktailCard from './Cocktail';
+import CocktailCard from './CocktailCard';
 
 const Cocktails = (props) => {
+    console.log(props)
+    const {cocktails} = props;
     return (
         <div>
-            {console.log(props)}
-            <CocktailCard></CocktailCard>
+           
+            {cocktails.map(cocktail => <CocktailCard key={cocktail.id} cocktail={cocktail}/>)}
         </div>
     )
 }

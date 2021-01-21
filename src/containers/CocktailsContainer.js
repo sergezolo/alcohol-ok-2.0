@@ -13,18 +13,17 @@ class CocktailsContainer extends Component {
 
     render() {
 
-        const cocktails = this.props.cocktails.map((cocktail, index) => {
-            return <li key={index}>{cocktail.name}</li>;
-        })
+        // const cocktails = this.props.cocktails.map((cocktail, index) => {
+        //     return <li key={index}>{cocktail.name}</li>;
+        // })
 
-        const cocktailsList = this.props
+        const {cocktails} = this.props
 
         return (
             <div className="cocktails-container">
-                <ul>{this.props.loading ? <h3>Loading...</h3> : cocktails}</ul>
+            {/* //     <ul>{this.props.loading ? <h3>Loading...</h3> : cocktails}</ul> */}
                 <Switch>
-                    <Cocktails cocktailsList={cocktailsList} ></Cocktails>
-                    <Route path='/' render={<Cocktails cocktailsList={cocktailsList}/>}/>
+                    <Route path='/' render={() => <Cocktails cocktails={cocktails}/>}/>
                     <Route path='/cocktails/:id'/>
                     <Route path='/cocktails/:id/edit'/>
                 
