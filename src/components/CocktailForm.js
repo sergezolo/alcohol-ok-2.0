@@ -9,17 +9,53 @@ export class CocktailForm extends Component {
         name: "",
         description: "",
         img_url: "",
-        instructions: [],
+        instructions: [""],
         ingredients: [
             {
                 name: "",
-                quantity: ""
+                quantity: "",
             }
         ]
     }
 
-    handleChange = event => {
+    handleChangeInstruction = (index, value) => {
+        this.setState({
+            ...this.state,
+            instructions: [
+                ...this.state.instructions.slice(0, index),
+                value, 
+                ...this.state.instructions.slice(index + 1),
+            ]
+        })
+    }
 
+    handleChangeIngredientName = (index, value) => {
+        console.log(index, value, this.state)
+        this.setState({
+            ...this.state,
+            ingredients: [
+                ...this.state.ingredients.slice(0, index),
+                {
+                    name: value,
+                    quantity: this.state.ingredients[index].quantity
+                }, 
+                ...this.state.ingredients.slice(index + 1),
+            ]
+        })
+    }
+
+    handleChangeIngredientQuantity = (index, value) => {
+        this.setState({
+            ...this.state,
+            ingredients: [
+                ...this.state.ingredients.slice(0, index),
+                {
+                    name: this.state.ingredients[index].name,
+                    quantity: value
+                },
+                ...this.state.ingredients.slice(index + 1),
+            ]
+        })
     }
 
     handleSubmit = event => {
@@ -36,8 +72,10 @@ export class CocktailForm extends Component {
     addInstruction = event => {
         event.preventDefault();
         this.setState((prevState) => ({
-            instructions: [...prevState.instructions, [""]]
+            
+            instructions: [...prevState.instructions, ""]
         }))
+        console.log(this.state)
     }
 
     render() {
@@ -52,12 +90,12 @@ export class CocktailForm extends Component {
                 </div>
                 <div className="item2">
                     <h5>Ingredients:</h5>
-                    <IngredientForm ingredients={ingredients} handleChange={this.handleChange}/><br/>
+                    <IngredientForm ingredients={ingredients} handleChangeName={this.handleChangeIngredientName} handleChangeQuantity={this.handleChangeIngredientQuantity}/><br/>
                     <AddCircleIcon className="buttonPrim" onClick={this.addIngredient}/>
                 </div>
                 <div className="item3">
                     <h5>Instructions:</h5>
-                    <InstructionForm instructions={instructions} handleChange={this.handleChange}/><br/>
+                    <InstructionForm instructions={instructions} handleChange={this.handleChangeInstruction}/><br/>
                     <AddCircleIcon className="buttonPrim" onClick={this.addInstruction}/>
                 </div>
                 <div className="item4"><br/>
