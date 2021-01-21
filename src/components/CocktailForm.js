@@ -8,7 +8,7 @@ export class CocktailForm extends Component {
     state = {
         name: "",
         description: "",
-        img_url: "",
+        imgUrl: "",
         instructions: [""],
         ingredients: [
             {
@@ -16,6 +16,13 @@ export class CocktailForm extends Component {
                 quantity: "",
             }
         ]
+    }
+
+    handleChange = event => {
+        this.setState({
+            ...this.state,
+            [event.target.name]: event.target.value
+        })
     }
 
     handleChangeInstruction = (index, value) => {
@@ -30,7 +37,6 @@ export class CocktailForm extends Component {
     }
 
     handleChangeIngredientName = (index, value) => {
-        console.log(index, value, this.state)
         this.setState({
             ...this.state,
             ingredients: [
@@ -72,21 +78,20 @@ export class CocktailForm extends Component {
     addInstruction = event => {
         event.preventDefault();
         this.setState((prevState) => ({
-            
             instructions: [...prevState.instructions, ""]
         }))
-        console.log(this.state)
     }
 
     render() {
+        console.log(this.state)
         // let { name, img_url, description, instructions, ingredients } = this.state
         let { instructions, ingredients } = this.state
         return (
             <div className="grid-container">
                 <div className="item1">
                     <h3>Add a new cocktail:</h3>
-                    <input type="text" name="name" id="name" placeholder="Name"/><br/><br/>
-                    <input type="text" name="imgUrl" id="imgUrl" placeholder="Image URL"/>
+                    <input type="text" name="name" id="name" placeholder="Name" onChange={this.handleChange}/><br/><br/>
+                    <input type="text" name="imgUrl" id="imgUrl" placeholder="Image URL" onChange={this.handleChange}/>
                 </div>
                 <div className="item2">
                     <h5>Ingredients:</h5>
@@ -100,7 +105,7 @@ export class CocktailForm extends Component {
                 </div>
                 <div className="item4"><br/>
                     <h5>Description:</h5>
-                    <input className="input-4" type="text"/><br/><br/>
+                    <input className="input-4" type="text" name="description" id="description" onChange={this.handleChange}/><br/><br/>
                     <input className="buttonPr" type="submit"/><br/><br/>
                 </div>
             </div>
