@@ -4,6 +4,7 @@
     height: 80px;
     font-family: Arial, Helvetica, sans-serif;
     display: flex;
+
 }
 
 .Header .leftSide {
@@ -35,6 +36,7 @@
 
 .Header .dropMenu {
     display: flex;
+    z-index: 1;
 }
 
 .Header .rightSide {

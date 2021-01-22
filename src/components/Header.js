@@ -7,12 +7,12 @@ import SearchIcon from '@material-ui/icons/Search';
 export class Header extends Component {
 
     state = {
-        clicked: false
+       isDropMenuOpened: false
     }
 
-    handleClick = () => {
+    toggleDropMenu = () => {
         this.setState({
-            clicked: !this.state.clicked
+            isDropMenuOpened: !this.state.isDropMenuOpened
         })
     }
 
@@ -20,11 +20,11 @@ export class Header extends Component {
         return (
             <div className="Header">
                 <div className="leftSide">
-                    <button className="button" onClick={this.handleClick}><ReorderIcon className="buttonImport"/></button>
-                    <div className={this.state.clicked ? "dropMenu" : "links"} >
-                        <Link to='/'>HOME</Link>
-                        <Link to='/create'>ADD A COCKTAIL</Link>
-                        <Link to='/favorites'>FAVORITES</Link>
+                    <button className="button" onClick={this.toggleDropMenu}><ReorderIcon className="buttonImport"/></button>
+                    <div className={this.state.isDropMenuOpened ? "dropMenu" : "links"} >
+                        <Link to='/' onClick={this.toggleDropMenu}>HOME</Link>
+                        <Link to='/create' onClick={this.toggleDropMenu}>ADD A COCKTAIL</Link>
+                        <Link to='/favorites' onClick={this.toggleDropMenu}>FAVORITES</Link>
                     </div>
                     
                 </div>
