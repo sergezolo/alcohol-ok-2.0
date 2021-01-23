@@ -1,16 +1,20 @@
 import React from 'react';
-import './Cocktail.css';
+import './CocktailCard.css';
+import { Link } from 'react-router-dom';
 
 const CocktailCard = (props) => {
     const { cocktail } = props;
     return (
-        <div className="cocktail">
+        <div className="cocktail" id={cocktail.id}>
             <div className="cocktail-image">
-                <img src="https://www.liquor.com/thmb/2o3aZLVPhumyohtYUm0qcNnxgKI=/960x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/Big-Red-Son_main_720x720-864f0c704f2c45cc8868fd69a4a324a3.jpg" alt=""/>
+                {/* {props.loading ? <h3>Loading...</h3> : cocktails.map(cocktail => <CocktailCard key={cocktail.id} cocktail={cocktail}/>)} */}
+                <img src={cocktail.img_url = "" ? "https://image.freepik.com/free-photo/empty-glasses-drinks_93675-80465.jpg" :cocktail.img_url} alt=""/>
             </div>
-            <div className="cocktail-name">
-                <h3> {cocktail.name} </h3>
-            </div>
+            <Link to={`/${cocktail.name}`}>
+                <div className="cocktail-name" id={cocktail.id}>
+                    <h3> {cocktail.name} </h3>
+                </div>
+            </Link>
         </div>
     )
 }

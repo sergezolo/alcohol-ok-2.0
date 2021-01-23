@@ -9,13 +9,23 @@ body {
     padding: 0;
 }
 
-.cocktails-container {
-    display: flex;
+.cocktail-form {
+    min-height: 66vh;
     align-items: center;
     justify-content: center;
+    text-align: center;
+}
+
+.cocktails-container {
+    min-height: 66vh;
+    grid-template-columns: auto auto auto auto;
+    display: grid;
+    justify-content: center;
+    text-align: center;
 }
 
 .buttonPr {
+    max-width: 300px;
     color: #ec8b56;
     font-size: 20px;
     background-color: #1b262c;
@@ -69,6 +79,14 @@ h5 {
     text-decoration: none;
 } 
 
+h2 {
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    color: #ec8b56;
+    text-decoration: none;
+} 
+
 .grid-container {
     position: center;
     width: 800px;
@@ -100,4 +118,32 @@ h5 {
 .item4 {
     grid-row: 3;
     grid-column: 1 / 3;
+}
+
+@media only screen and (max-width: 980px) {
+    .cocktails-container {
+        grid-template-columns: auto auto auto;
+    }
+}
+
+@media only screen and (max-width: 750px) {
+    .cocktails-container {
+        grid-template-columns: auto auto;
+    }
+}
+
+.cocktail-img {
+    width: 400px;
+    height: 400px;
+    box-shadow: 0.1rem 0.1rem 0.1rem rgb(36, 36, 36);
+    justify-content: left;
+    align-items: left;
+}
+
+p {
+    text-align: center;
+    font-size: 16px;
+    color: #ec8b56;
+    text-decoration: none;
+    padding: 0.5rem;
 }

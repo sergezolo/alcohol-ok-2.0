@@ -90,6 +90,7 @@ export class CocktailForm extends Component {
             ingredients: this.state.ingredients,
         }
         this.props.createCocktail(cocktail)
+
         this.setState({
             name: "",
             description: "",

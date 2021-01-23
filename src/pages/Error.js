@@ -5,9 +5,9 @@ export const Error = () => {
     return (
         <section className="error-page">
             <div className="cocktail-form">
-                <h3>Wrong turn, baby! It's a dead end!</h3><br/><br/>
+                <h3>Wrong turn, sweetie! It's a dead end!</h3><br/><br/>
                 
-                <Link to='/' className='btn'>HOME</Link>
+                <Link to='/' className='buttonPrim' type='button'>HOME</Link>
             </div>            
         </section>
     )

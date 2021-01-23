@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import './Header.css';
 import ReorderIcon from '@material-ui/icons/Reorder';
-import SearchIcon from '@material-ui/icons/Search';
+import Search from './Search';
 
 export class Header extends Component {
 
@@ -29,8 +29,7 @@ export class Header extends Component {
                     
                 </div>
                 <div className="rightSide">
-                    <input type="text" placeholder="Search..."/>
-                    <button className="button"><SearchIcon/></button>
+                    <Search />
                 </div>            
             </div>
         )
