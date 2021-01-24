@@ -9,7 +9,7 @@ export const getCocktails = () => {
     }
 }
 
-export const createCocktail = (cocktail) => {
+export const createCocktail = (cocktail, callback) => {
     return dispatch => {
         dispatch({type: "CREATING_COCKTAIL"})
         fetch("http://localhost:3001/cocktails", {
@@ -21,6 +21,11 @@ export const createCocktail = (cocktail) => {
             }
         })
         .then(response => response.json())
-        .then(cocktail => dispatch({type: "COCKTAIL_CREATED", payload: cocktail}))
+        .then(cocktail => {
+            dispatch({type: "COCKTAIL_CREATED", payload: cocktail})
+            if (callback) {
+                callback(cocktail)
+            }
+        })
     }
 }

@@ -1,8 +1,9 @@
 import { combineReducers } from 'redux';
 import cocktailReducer from './cocktailReducer';
+import searchReducer from './searchReducer';
 
 const rootReducer = combineReducers({
-    cocktailReducer
+    cocktailReducer, searchReducer
 })
 
 export default rootReducer;

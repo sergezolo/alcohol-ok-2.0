@@ -4,6 +4,7 @@ import InstructionForm from './InstructionForm';
 import AddCircleIcon from '@material-ui/icons/AddCircle';
 import { connect } from 'react-redux';
 import { createCocktail} from '../actions/cocktails';
+import { withRouter } from 'react-router-dom';
 
 export class CocktailForm extends Component {
 
@@ -89,7 +90,10 @@ export class CocktailForm extends Component {
             instructions: this.state.instructions,
             ingredients: this.state.ingredients,
         }
-        this.props.createCocktail(cocktail)
+        this.props.createCocktail(cocktail, (newCocktail) => {
+            console.log(this.props, newCocktail)
+            this.props.history.push(`/cocktails/${newCocktail.id}`)
+        })
 
         this.setState({
             name: "",
@@ -106,13 +110,13 @@ export class CocktailForm extends Component {
     }
 
     render() {
-        let { instructions, ingredients } = this.state
+        let { name, description, imgUrl, instructions, ingredients } = this.state
         return (
             <form className="grid-container" onSubmit={this.handleSubmit}>
                 <div className="item1">
                     <h3>Add a new cocktail:</h3>
-                    <input type="text" name="name" id="name" placeholder="Name" onChange={this.handleChange}/><br/><br/>
-                    <input type="text" name="imgUrl" id="imgUrl" placeholder="Image URL" onChange={this.handleChange}/>
+                    <input type="text" name="name" id="name" placeholder="Name" onChange={this.handleChange} value={name}/><br/><br/>
+                    <input type="text" name="imgUrl" id="imgUrl" placeholder="Image URL" onChange={this.handleChange} value={imgUrl}/>
                 </div>
                 <div className="item2">
                     <h5>Ingredients:</h5>
@@ -126,7 +130,7 @@ export class CocktailForm extends Component {
                 </div>
                 <div className="item4"><br/>
                     <h5>Description:</h5>
-                    <input className="input-4" type="text" name="description" id="description" onChange={this.handleChange}/><br/><br/>
+                    <input className="input-4" type="text" name="description" id="description" onChange={this.handleChange} value={description}/><br/><br/>
                     <input className="buttonPr" type="submit"/><br/><br/>
                 </div>
             </form>
@@ -134,4 +138,4 @@ export class CocktailForm extends Component {
     }
 }
 
-export default connect(null, { createCocktail })( CocktailForm);
+export default withRouter(connect(null, { createCocktail })( CocktailForm));
