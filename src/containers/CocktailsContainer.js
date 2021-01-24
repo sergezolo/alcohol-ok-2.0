@@ -19,10 +19,8 @@ class CocktailsContainer extends Component {
         return (
             <div className="cocktails-container">
                 <Switch>
-                    <Route exact path='/cocktail' render={() => <Cocktail/>}/>
-                    <Route exact path='/' render={() => <Cocktails cocktails={cocktails} loading={loading}/>}/>
-                    {/* <Route path='/${cocktail.name}' render={(routerProps) => <Cocktail {...routerProps} cocktails={cocktails} loading={loading}/>}/> */}
-                    {/* <Route path='/${cocktail.name}' render={<Cocktail/>} /> */}
+                    <Route path='/' render={() => <Cocktails cocktails={cocktails} loading={loading}/>}/>
+                    <Route path='/${cocktail.name}' render={() => <Cocktail cocktails={cocktails} loading={loading}/>}/>
                     <Route path='/cocktails/:id/edit'/>
                 </Switch>
             </div>
@@ -31,7 +29,6 @@ class CocktailsContainer extends Component {
 }
 
 const mapStateToProps = state => {
-    console.log(state)
     return {
       cocktails: state.cocktailReducer.cocktails,
       loading: state.cocktailReducer.loading
