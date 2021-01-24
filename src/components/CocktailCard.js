@@ -9,7 +9,7 @@ const CocktailCard = (props) => {
             <div className="cocktail-image">
                 <img src={cocktail.img_url.length < 5 ? "https://image.freepik.com/free-photo/empty-glasses-drinks_93675-80465.jpg" :cocktail.img_url} alt=""/>
             </div>
-            <Link to={`/${cocktail.name}`}>
+            <Link to={`/cocktails/${cocktail.id}`}>
                 <div className="cocktail-name" id={cocktail.id}>
                     <h3> {cocktail.name} </h3>
                 </div>

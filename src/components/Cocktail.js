@@ -1,15 +1,17 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 
-const Cocktail = () => {
+const Cocktail = (props) => {
 
+ const {cocktails, history, match} = props;
+     
+console.log(props)
 
-
-// const cocktail = cocktails.find(cocktail => cocktail.id === 2)
+const cocktail = cocktails.find(cocktail => cocktail.id === +match.params.id)
 
     return (
         <div className="grid-container ">
-            <div className="item1"><h2>Name</h2></div>
+            <div className="item1"><h2>{cocktail.name}</h2></div>
             <div className="item2"><img className="cocktail-img" src="https://www.liquor.com/thmb/9sxEP7r3KCRvz60d7T8tOJfTOew=/960x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/__opt__aboutcom__coeus__resources__content_migration__liquor__2018__01__25082750__Roman-Holiday-720x720-recipe-4c85f04bd8694fe0a7742cda5ecb421e.jpg"></img></div>
             <div className="item3">
                 <div className="ingredients">
@@ -38,4 +40,4 @@ const Cocktail = () => {
     )
 }
 
-export default Cocktail;
+export default withRouter(Cocktail);

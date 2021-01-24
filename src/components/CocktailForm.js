@@ -106,7 +106,6 @@ export class CocktailForm extends Component {
     }
 
     render() {
-        console.log(this.state)
         let { instructions, ingredients } = this.state
         return (
             <form className="grid-container" onSubmit={this.handleSubmit}>
