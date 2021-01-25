@@ -19,7 +19,7 @@ const handleDelete = (cocktailId) => {
     return (
         <div className="grid-container ">
             <div className="item1"><h2>{cocktail.name}</h2></div>
-            <div className="item2"><img className="cocktail-img" alt="" src={cocktail.img_url.length < 5 ? "https://image.freepik.com/free-photo/empty-glasses-drinks_93675-80465.jpg" :cocktail.img_url}/></div>
+            <div className="item2"><img className="cocktail-img" src={cocktail.img_url.length < 5 ? "https://image.freepik.com/free-photo/empty-glasses-drinks_93675-80465.jpg" :cocktail.img_url}/></div>
             <div className="item3">
                 <div className="ingredients">
                     <h5>Ingredients:</h5>
