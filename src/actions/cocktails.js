@@ -36,8 +36,7 @@ export const deleteCocktail = (cocktailId) => {
         fetch(`http://localhost:3001/cocktails/${cocktailId}`, {
             method: "DELETE",
         })
-        .then(response => response.json())
-        .then(cocktail => {
+        .then(() => {
             dispatch({type: "COCKTAIL_DELETED", payload: cocktailId})
         })
     }

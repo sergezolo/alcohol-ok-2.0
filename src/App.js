@@ -3,11 +3,10 @@ import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-d
 import Header from './components/Header';
 import CocktailsContainer from './containers/CocktailsContainer';
 import CocktailForm from './components/CocktailForm';
-import Favorite from './components/Favorite';
+import IngredientsContainer from './components/Ingredients';
 import Error from './pages/Error'
 import Footer from './components/Footer';
 import './App.css';
-import Cocktail from './components/Cocktail'
 
 class App extends Component {
 
@@ -18,11 +17,9 @@ class App extends Component {
           <Header/>
             <Switch>
               <Redirect exact from='/' to='/cocktails'/>
-              {/* <Route exact path='/'><Redirect to="/cocktails"/></Route> */}
               <Route path='/cocktails' component={ CocktailsContainer }/>
               <Route path='/create' component={ CocktailForm }/>
-              <Route path='/favorites' component={ Favorite }/>
-              <Route path='/cocktail' component={ Cocktail }/> 
+              <Route path='/ingredients' component={ IngredientsContainer }/>
               <Route path='/*' component={ Error }/>
             </Switch>
           <Footer/>

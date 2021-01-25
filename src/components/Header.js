@@ -24,7 +24,7 @@ export class Header extends Component {
                     <div className={this.state.isDropMenuOpened ? "dropMenu" : "links"} >
                         <Link to='/' onClick={this.toggleDropMenu}>HOME</Link>
                         <Link to='/create' onClick={this.toggleDropMenu}>ADD A COCKTAIL</Link>
-                        <Link to='/favorites' onClick={this.toggleDropMenu}>FAVORITES</Link>
+                        <Link to='/ingredients' onClick={this.toggleDropMenu}>INGREDIENTS</Link>
                     </div>
                     
                 </div>
