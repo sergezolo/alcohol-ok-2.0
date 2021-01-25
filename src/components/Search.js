@@ -9,7 +9,7 @@ const Search = (props) => {
     return (
         <React.Fragment>
             <input type="text" placeholder="Search..." id="name" value={props.searchQuery} onChange={(event) => props.updateSearchQuery(event.target.value)}/>
-            <button className="button"><SearchIcon/></button>
+            <button className="button2"><SearchIcon/></button>
         </React.Fragment>
     )
 }

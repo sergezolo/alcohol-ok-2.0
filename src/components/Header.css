@@ -70,6 +70,12 @@
     cursor: pointer;
     outline:none;
 }
+.button2 {
+    border: none;
+    border-color:#1b262c;
+    padding: 0px 0px;
+    outline:none;
+}
 
 .buttonImport {
     color: #ec8b56;
