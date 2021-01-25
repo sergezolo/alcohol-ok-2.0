@@ -29,3 +29,18 @@ export const createCocktail = (cocktail, callback) => {
         })
     }
 }
+
+export const deleteCocktail = (cocktailId) => {
+    return dispatch => {
+        dispatch({type: "DELETING_COCKTAIL"})
+        fetch(`http://localhost:3001/cocktails/${cocktailId}`, {
+            method: "DELETE",
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            }
+        })
+        .then(response => response.json())
+        .then(cocktail => {dispatch({type: "COCKTAIL_DELETED", payload: cocktail})})
+    }
+}

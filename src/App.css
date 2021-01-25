@@ -25,13 +25,15 @@ body {
 }
 
 .buttonPr {
-    max-width: 300px;
+    max-width: 380px;
     color: #ec8b56;
     font-size: 20px;
     background-color: #1b262c;
     cursor: pointer;
     padding: 0px 0px;
     outline: none;
+    border: none;
+    text-decoration: none;
 }
 .buttonPrim {
     color: #ec8b56;
