@@ -1,17 +1,38 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { updateSearchQuery } from '../actions/search';
 
 const Ingredients = (props) => {
 
     const { ingredients, loading } = props
 
-    console.log(ingredients)
 
     return (
-        <div>
-            hey
-             {/* {loading ? <h3>Loading...</h3> : ingredients.map(ingredient => <li key={ingredient.id}>{ingredient.name}</li>)} */}
+       
+        <div className="ingredients-container">
+            <div><h2>Top Ingredients</h2></div>
+            <div><h3>The list of the most common ingredients used in the cocktails on the AlcoholOK:</h3></div><br/>
+            <div className="grid-ingredients">
+                {loading ? <h3>Loading...</h3> : ingredients.sort((a, b) => (a.cocktails.length > b.cocktails.length) ? -1: 1).map(
+                    ingredient => 
+                    <div className="grid-item" key={ingredient.id}>
+                        <li className="li-ing">
+                            #<Link className="link-ing" to='/cocktails' value={ingredient.id} onClick={(event) => console.log(event.target)}>
+                                {ingredient.name}
+                            </Link> 
+                            ({ingredient.cocktails.length}x used)
+                        </li>
+                    </div>)}
+            </div>
         </div>
     )
 }
 
-export default Ingredients;
+const mapStateToProps = state => {
+    return {
+      searchQuery: state.searchReducer.query,
+    }
+}
+
+export default connect(mapStateToProps, { updateSearchQuery })(Ingredients);

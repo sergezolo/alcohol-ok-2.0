@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-d
 import Header from './components/Header';
 import CocktailsContainer from './containers/CocktailsContainer';
 import CocktailForm from './components/CocktailForm';
-import IngredientsContainer from './components/Ingredients';
+import IngredientsContainer from './containers/IngredientsContainer';
 import Error from './pages/Error'
 import Footer from './components/Footer';
 import './App.css';

@@ -23,9 +23,14 @@ body {
     justify-content: center;
     text-align: center;
 }
+.ingredients-container {
+    display: block;
+    justify-content: center;
+    text-align: center;
+}
 
 .buttonPr {
-    max-width: 380px;
+    width: 380px;
     color: #ec8b56;
     font-size: 20px;
     background-color: #1b262c;
@@ -177,13 +182,6 @@ li {
     color: #ec8b56;
     text-decoration: none;
     padding: 0.5rem;
-}
-li {
-    text-align: center;
-    font-size: 16px;
-    color: #ec8b56;
-    text-decoration: none;
-    padding: 0.5rem;
     text-align: left;
 }
 .li-left-m {
@@ -202,4 +200,36 @@ li {
     padding: 0.5rem;
     text-align: left;
     list-style-type: none;
+}
+.grid-ingredients {
+    position: center;
+    width: auto;
+    margin: auto;
+    grid-template-columns: auto auto auto;
+    grid-row: 10;
+    display: grid;
+    justify-content: center;
+    text-align: center;
+}
+.grid-item {
+    text-align: center;
+    font-size: 16px;
+    color: #ec8b56;
+    text-decoration: none;
+    padding: 0.5rem;
+    text-align: left;
+}
+
+.li-ing {
+    text-align: center;
+    font-size: 16px;
+    color: #ec8b56;
+    text-decoration: none;
+    padding: 0.5rem;
+    text-align: left;
+    list-style-type: none;
+}
+.link-ing {
+    text-decoration: none;
+    color: #ec8b56;
 }

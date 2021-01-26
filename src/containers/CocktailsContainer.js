@@ -5,8 +5,6 @@ import { getCocktails } from '../actions/cocktails';
 import Cocktails from '../components/Cocktails';
 import Cocktail from '../components/Cocktail';
 
-
-
 class CocktailsContainer extends Component {
 
     componentDidMount(){
@@ -22,7 +20,6 @@ class CocktailsContainer extends Component {
                 <Switch>
                     <Route exact path='/cocktails' render={() => <Cocktails cocktails={cocktails} loading={loading}/>}/>
                     <Route path='/cocktails/:id' render={(routerProps) => <Cocktail {...routerProps} cocktails={cocktails} loading={loading}/>}/>
-                    <Route path='/cocktails/:id/edit'/>
                 </Switch>
             </div>
         )

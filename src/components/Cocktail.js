@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, withRouter } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 import { deleteCocktail } from '../actions/cocktails';
 import { connect } from 'react-redux';
 
@@ -24,10 +24,10 @@ const handleDelete = (cocktailId) => {
                 <div className="ingredients">
                     <h5>Ingredients:</h5>
                     <div className="grid-container-sm">
-                        <div className="item1-sm">
+                        <div className="item1-sm" key={cocktail.ingredients.id}>
                             {cocktail.ingredients.map((ingredient) => <li className="li-left-m" key={ingredient.id}>{ingredient.name}</li>)}
                         </div>
-                        <div className="item2-sm">
+                        <div className="item2-sm" key={cocktail.cocktail_ingredients.id}>
                             {cocktail.cocktail_ingredients.map((c_ingredient) => <li className="li-left" key={c_ingredient.id}>{c_ingredient.quantity} </li>)}
                         </div>
                     </div>
@@ -40,8 +40,10 @@ const handleDelete = (cocktailId) => {
             <div className="item4">
                 <p>{cocktail.description}</p>
             </div>
-            <Link to={`/cocktail/${cocktail.id}/edit`} className="buttonPr">Edit Cocktail</Link>
-            <button className="buttonPr" onClick={() => handleDelete(cocktail.id)}>Delete Cocktail</button><br/><br/>
+            <div className="item1">
+                 <button className="buttonPr" onClick={() => handleDelete(cocktail.id)}>Delete Cocktail</button><br/><br/>
+            </div>
+           
    
         </div>
     )

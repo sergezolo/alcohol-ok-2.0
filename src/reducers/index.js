@@ -4,7 +4,9 @@ import searchReducer from './searchReducer';
 import ingredientReducer from './ingredientReducer';
 
 const rootReducer = combineReducers({
-    cocktailReducer, searchReducer, ingredientReducer
+    cocktailReducer, 
+    searchReducer, 
+    ingredientReducer,
 })
 
 export default rootReducer;

@@ -11,13 +11,13 @@ class IngredientsContainer extends Component {
     }
  
     render() {
-        console.log(this.props)
-        const {ingredients, loading} = this.props
-        console.log(ingredients)
+
+        const { ingredients, loading, cocktails } = this.props
+
         return (
-            <div>
+            <div className="cocktails-container">
                 <Switch>
-                    <Route exact path='/ingredients' render={() => <Ingredients ingredients={ingredients} loading={loading}/>}/>
+                    <Route exact path='/ingredients' render={() => <Ingredients ingredients={ingredients} loading={loading} cocktails={cocktails} />}/>
                 </Switch>
             </div>
         )
@@ -26,8 +26,8 @@ class IngredientsContainer extends Component {
 
 const mapStateToProps = state => {
     return {
-      ingredients: state.ingredientsReducer.ingredients,
-      loading: state.ingredientsReducer.loading
+        ingredients: state.ingredientReducer.ingredients,
+        loading: state.ingredientReducer.loading
     }
 }
 
