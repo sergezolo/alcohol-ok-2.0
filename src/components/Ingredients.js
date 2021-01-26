@@ -11,8 +11,8 @@ const Ingredients = (props) => {
     return (
        
         <div className="ingredients-container">
-            <div><h2>Top Ingredients</h2></div>
-            <div><h3>The list of the most common ingredients used in the cocktails on the AlcoholOK:</h3></div><br/>
+            <div><h2>Ingredients</h2></div>
+            <div><h3>The list of all the ingredients used in the cocktails on the AlcoholOK:</h3></div><br/>
             <div className="grid-ingredients">
                 {loading ? <h3>Loading...</h3> : ingredients.sort((a, b) => (a.cocktails.length > b.cocktails.length) ? -1: 1).map(
                     ingredient => 

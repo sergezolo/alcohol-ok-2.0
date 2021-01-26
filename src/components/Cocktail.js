@@ -23,7 +23,7 @@ const handleDelete = (cocktailId) => {
             <div className="item3">
                 <div className="ingredients">
                     <h5>Ingredients:</h5>
-                    {cocktail.ingredients.map((ingredient, index) => <li className="li-left-m" key={ingredient.id}>{ingredient.name} - {cocktail.cocktail_ingredients[index].quantity}</li>)}
+                    {cocktail.ingredients.map((ingredient, index) => <li className="li-left-m" key={ingredient.id}>{cocktail.cocktail_ingredients[index].quantity} {ingredient.name}</li>)}
                 </div>
                 <div className="instructions">
                     <h5>Instructions:</h5>
