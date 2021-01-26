@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import './Header.css';
 import ReorderIcon from '@material-ui/icons/Reorder';
 import Search from './Search';
@@ -17,6 +17,9 @@ export class Header extends Component {
     }
 
     render() {
+
+        const isSearchShown = this.props.location.pathname === "/cocktails";
+
         return (
             <div className="Header">
                 <div className="leftSide">
@@ -29,7 +32,7 @@ export class Header extends Component {
                     
                 </div>
                 <div className="rightSide">
-                    <Search />
+                    {isSearchShown ? <Search /> : null}
                 </div>            
             </div>
         )
@@ -37,4 +40,4 @@ export class Header extends Component {
 
 }
 
-export default Header;
+export default withRouter(Header);

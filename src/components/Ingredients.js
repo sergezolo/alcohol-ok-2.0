@@ -17,12 +17,7 @@ const Ingredients = (props) => {
                 {loading ? <h3>Loading...</h3> : ingredients.sort((a, b) => (a.cocktails.length > b.cocktails.length) ? -1: 1).map(
                     ingredient => 
                     <div className="grid-item" key={ingredient.id}>
-                        <li className="li-ing">
-                            #<Link className="link-ing" to='/cocktails' value={ingredient.id} onClick={(event) => console.log(event.target)}>
-                                {ingredient.name}
-                            </Link> 
-                            ({ingredient.cocktails.length}x used)
-                        </li>
+                        <li className="li-ing">#<Link className="link-ing" to='/cocktails' onClick={(event) => props.updateSearchQuery(ingredient.name)}>{ingredient.name} </Link> ({ingredient.cocktails.length}x used)</li>
                     </div>)}
             </div>
         </div>
