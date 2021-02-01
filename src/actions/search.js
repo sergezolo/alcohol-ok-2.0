@@ -5,3 +5,9 @@ export const updateSearchQuery = (value) => {
         dispatch({type: "UPDATE_SEARCH_QUERY", value})
     }
 }
+
+export const clearSearchQuery = () => {
+    return dispatch => {
+        dispatch({type: "CLEAR_SEARCH_QUERY"})
+    }
+}

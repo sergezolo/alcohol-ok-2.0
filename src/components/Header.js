@@ -3,6 +3,8 @@ import { Link, withRouter } from 'react-router-dom';
 import './Header.css';
 import ReorderIcon from '@material-ui/icons/Reorder';
 import Search from './Search';
+import { connect } from 'react-redux';
+import { clearSearchQuery } from '../actions/search';
 
 export class Header extends Component {
 
@@ -25,7 +27,7 @@ export class Header extends Component {
                 <div className="leftSide">
                     <button className="button" onClick={this.toggleDropMenu}><ReorderIcon className="buttonImport"/></button>
                     <div className={this.state.isDropMenuOpened ? "dropMenu" : "links"} >
-                        <Link to='/' onClick={this.toggleDropMenu}>HOME</Link>
+                        <Link to='/' onClick={ this.toggleDropMenu, this.props.clearSearchQuery }>HOME</Link>
                         <Link to='/create' onClick={this.toggleDropMenu}>ADD A COCKTAIL</Link>
                         <Link to='/ingredients' onClick={this.toggleDropMenu}>INGREDIENTS</Link>
                     </div>
@@ -40,4 +42,10 @@ export class Header extends Component {
 
 }
 
-export default withRouter(Header);
+const mapStateToProps = state => {
+    return {
+      searchQuery: state.searchReducer.query,
+    }
+}
+
+export default withRouter(connect(mapStateToProps, { clearSearchQuery })(Header));
