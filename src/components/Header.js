@@ -27,7 +27,7 @@ export class Header extends Component {
                 <div className="leftSide">
                     <button className="button" onClick={this.toggleDropMenu}><ReorderIcon className="buttonImport"/></button>
                     <div className={this.state.isDropMenuOpened ? "dropMenu" : "links"} >
-                        <Link to='/' onClick={ this.toggleDropMenu, this.props.clearSearchQuery }>HOME</Link>
+                        <Link to='/' onClick={(event) => { this.props.clearSearchQuery(event);  this.toggleDropMenu();}}>HOME</Link>
                         <Link to='/create' onClick={this.toggleDropMenu}>ADD A COCKTAIL</Link>
                         <Link to='/ingredients' onClick={this.toggleDropMenu}>INGREDIENTS</Link>
                     </div>
